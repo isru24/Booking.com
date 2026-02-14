@@ -1,6 +1,7 @@
 import 'package:booking/screens/search/Attractions.dart';
 import 'package:booking/utils/location_popup.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Flight extends StatefulWidget {
   const Flight({super.key});
@@ -10,8 +11,12 @@ class Flight extends StatefulWidget {
 }
 
 class _FlightState extends State<Flight> {
-  final TextEditingController _pickupDateController = TextEditingController();
-  final TextEditingController _returnDateController = TextEditingController();
+  final TextEditingController _pickupDateController = Get.put(
+    TextEditingController(),
+  );
+  final TextEditingController _returnDateController = Get.put(
+    TextEditingController(),
+  );
 
   int selectedOption = 1;
   @override

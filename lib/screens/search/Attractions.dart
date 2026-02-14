@@ -1,5 +1,6 @@
 import 'package:booking/utils/location_popup.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Attractions extends StatefulWidget {
   const Attractions({super.key});
@@ -9,7 +10,7 @@ class Attractions extends StatefulWidget {
 }
 
 class _AttractionsState extends State<Attractions> {
-  final TextEditingController _dateController = TextEditingController();
+  final TextEditingController _dateController = Get.put(TextEditingController());
   @override
   Widget build(BuildContext context) {
     return Column(

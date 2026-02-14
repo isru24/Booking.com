@@ -1,7 +1,9 @@
+import 'package:booking/controller/BookingController.dart';
 import 'package:booking/screens/booking/Active.dart';
 import 'package:booking/screens/booking/canceled.dart';
 import 'package:booking/screens/booking/past.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Booking extends StatefulWidget {
   const Booking({super.key});
@@ -11,9 +13,7 @@ class Booking extends StatefulWidget {
 }
 
 class _BookingState extends State<Booking> {
-  bool showActive = true;
-  bool showPast = true;
-  bool showCanceled = true;
+  final controller = Get.put(Bookingcontroller());
 
   @override
   Widget build(BuildContext context) {
@@ -24,40 +24,32 @@ class _BookingState extends State<Booking> {
         children: [
           Row(
             children: [
-              TextButton.icon(
-                onPressed: () {
-                  setState(() {
-                    showActive = true;
-                    showPast = false;
-                  });
-                },
-                label: const Text('Active'),
+              TextButton(
+                onPressed: controller.showActiveBooking,
+                child: const Text('Active'),
               ),
               const SizedBox(width: 8),
-              TextButton.icon(
-                onPressed: () {
-                  setState(() {
-                    showActive = false;
-                    showPast = true;
-                  });
-                },
-                label: const Text('past'),
+              TextButton(
+                onPressed: controller.showPastBooking,
+                child: const Text('past'),
               ),
               const SizedBox(width: 8),
-              TextButton.icon(
-                onPressed: () {
-                  setState(() {
-                    showActive = false;
-                    showCanceled = true;
-                    showPast = false;
-                  });
-                },
-                label: const Text('canceled'),
+              TextButton(
+                onPressed: controller.showCanceledBooking,
+                child: const Text('canceled'),
               ),
             ],
           ),
           const SizedBox(height: 16),
-          if (showActive) Active() else if (showPast) Past() else Canceled(),
+          Obx(() {
+            if (controller.showActive.value) {
+              return Active();
+            } else if (controller.showPast.value) {
+              return Past();
+            } else {
+              return Canceled();
+            }
+          }),
         ],
       ),
     );

@@ -1,7 +1,9 @@
+import 'package:booking/controller/SearchController.dart';
 import 'package:booking/screens/search/Attractions.dart';
 import 'package:booking/screens/search/flights.dart';
 import 'package:booking/screens/search/taxi.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Search extends StatefulWidget {
   const Search({super.key});
@@ -11,8 +13,7 @@ class Search extends StatefulWidget {
 }
 
 class _SearchState extends State<Search> {
-  bool showTaxi = true;
-  bool showAttraction = true;
+  final controller = Get.put(Searchcontroller());
 
   @override
   Widget build(BuildContext context) {
@@ -24,36 +25,33 @@ class _SearchState extends State<Search> {
           Row(
             children: [
               TextButton.icon(
-                onPressed: () => setState(() => showTaxi = true),
+                onPressed: controller.showTaxis,
                 icon: const Icon(Icons.local_taxi_outlined),
                 label: const Text('Taxi'),
               ),
               const SizedBox(width: 8),
               TextButton.icon(
-                onPressed: () => setState(() {
-                  showTaxi = false;
-                  showAttraction = true;
-                }),
+                onPressed: controller.showAttractions,
                 icon: const Icon(Icons.attractions),
                 label: const Text('Attractions'),
               ),
               TextButton.icon(
-                onPressed: () => setState(() {
-                  showAttraction = false;
-                  showTaxi = false;
-                }),
+                onPressed: controller.showFlights,
                 icon: const Icon(Icons.airplanemode_active),
                 label: const Text('Flight'),
               ),
             ],
           ),
           const SizedBox(height: 16),
-          if (showTaxi)
-            Taxi()
-          else if (showAttraction)
-            Attractions()
-          else
-            Flight(),
+          Obx(() {
+            if (controller.showFlight.value) {
+              return Flight();
+            } else if (controller.showAttraction.value) {
+              return Attractions();
+            } else {
+              return Taxi();
+            }
+          }),
         ],
       ),
     );
