@@ -1,5 +1,5 @@
 import 'package:booking/screens/booking/booking.dart';
-import 'package:booking/screens/profile.dart';
+import 'package:booking/screens/myAccounts/my_account_page.dart';
 import 'package:booking/screens/search/search.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = const [Search(), Profile(), Booking(), Profile()];
+  final List<Widget> _pages = const [Search(), MyAccountPage(), Booking(), MyAccountPage()];
 
   @override
   Widget build(BuildContext context) {
