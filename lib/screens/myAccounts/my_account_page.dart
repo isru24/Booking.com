@@ -185,8 +185,6 @@ class _MyAccountPageState extends State<MyAccountPage> {
                 // Get.to(() => const HomePage());
               }),
             ]),
-
-            // Sign out button exactly like the screenshot
             Container(
               color: AppColors.white,
               child: Padding(
