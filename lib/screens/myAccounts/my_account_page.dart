@@ -28,7 +28,7 @@ class _MyAccountPageState extends State<MyAccountPage> {
         automaticallyImplyLeading: false,
         backgroundColor: AppColors.primary,
         elevation: 0,
-        scrolledUnderElevation: 0, // 🔥 removes scroll shadow
+        scrolledUnderElevation: 0, 
         surfaceTintColor: Colors.transparent,
         toolbarHeight: 100,
         title: Row(
