@@ -27,9 +27,7 @@ class _MyAccountPageState extends State<MyAccountPage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: AppColors.primary,
-        elevation: 0,
-        scrolledUnderElevation: 0, // 🔥 removes scroll shadow
-        surfaceTintColor: Colors.transparent,
+      
         toolbarHeight: 100,
         title: Row(
           children: [
@@ -185,8 +183,6 @@ class _MyAccountPageState extends State<MyAccountPage> {
                 // Get.to(() => const HomePage());
               }),
             ]),
-
-            // Sign out button exactly like the screenshot
             Container(
               color: AppColors.white,
               child: Padding(
