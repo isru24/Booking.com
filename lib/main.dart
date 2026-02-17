@@ -1,6 +1,7 @@
 import 'package:booking/main_screen.dart';
 import 'package:booking/screens/provider/favorite_provider.dart';
 import 'package:booking/screens/screen/home_page.dart';
+import 'package:booking/screens/search/select.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         builder: DevicePreview.appBuilder,
         theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
         home:  MainScreen(),
+        
       ),
     );
   }

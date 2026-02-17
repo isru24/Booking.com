@@ -3,6 +3,7 @@ import 'package:booking/screens/profile.dart';
 import 'package:booking/screens/screen/home_page.dart';
 import 'package:booking/screens/search/favoright.dart';
 import 'package:booking/screens/search/search.dart';
+import 'package:booking/screens/search/search_page.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -17,9 +18,13 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _pages =[
     HomePage(),
+    // Search(),
+    
+      //  SearchPage(imageUrl: 'https://tse2.mm.bing.net/th/id/OIP.HqgFRddn8dVzuEvEtSnG6AHaEM?rs=1&pid=ImgDetMain&o=7&rm=3'),
     Favoright(),
      Booking(),
-      Profile()];
+      Profile()
+      ];
 
   @override
   Widget build(BuildContext context) {

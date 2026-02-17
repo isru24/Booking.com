@@ -1,8 +1,10 @@
 import 'package:booking/controller/itemController.dart';
+import 'package:booking/main_screen.dart';
 import 'package:booking/screens/screen/Appbar.dart';
 import 'package:booking/screens/search/TestDetail.dart';
 import 'package:booking/screens/search/genius_desctiption.dart';
 import 'package:booking/screens/search/search.dart';
+import 'package:booking/screens/search/select.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,7 +37,7 @@ class SearchPage extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(70),
-        child: Center(child:Search()),
+        child: Center(child:Search())
       ),
 
       body: Padding(
@@ -199,7 +201,10 @@ class SearchPage extends StatelessWidget {
                   final item = controller.itemList[index];
                   return GestureDetector(
                     onTap: () {
-                      Get.to(() => TestDetail(item: item));
+                      // Get.to(() => TestDetail(item: item));
+                      Get.to(() => Select());
+
+                      
                     },
                     child: Container(
                       width: 150,

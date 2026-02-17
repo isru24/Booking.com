@@ -20,9 +20,12 @@ class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Search')),
+      appBar: AppBar(title: const Text('App page')),
+
+      
       body: ListView(
         padding: const EdgeInsets.all(12),
+
         children: [
           Row(
             children: [
