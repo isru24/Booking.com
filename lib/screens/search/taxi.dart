@@ -1,6 +1,10 @@
+import 'package:booking/GeniusLoyalityProgram/choose_taxi_page.dart';
+import 'package:booking/GeniusLoyalityProgram/genius_loyality_program_page.dart';
 import 'package:booking/screens/search/Attractions.dart';
+import 'package:booking/theam/app_color.dart';
 import 'package:booking/utils/location_popup.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Taxi extends StatefulWidget {
   const Taxi({super.key});
@@ -17,6 +21,7 @@ class _TaxiState extends State<Taxi> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           padding: const EdgeInsets.all(16),
@@ -158,12 +163,21 @@ class _TaxiState extends State<Taxi> {
               ),
               SizedBox(
                 width: double.infinity,
+                height: 50,
                 child: Material(
                   child: TextButton(
-                    onPressed: () {},
-                    child: Text('Check Price'),
+                    onPressed: () {
+                      Get.to(ChooseTaxiPage());
+                    },
+                    child: Text(
+                      'Check Price',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     style: TextButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                      backgroundColor: AppColors.secondary,
                       foregroundColor: Colors.white,
                       shape: BeveledRectangleBorder(),
                     ),
@@ -173,27 +187,296 @@ class _TaxiState extends State<Taxi> {
             ],
           ),
         ),
+        Padding(
+          padding: const EdgeInsets.only(top: 20.0),
+          child: Text(
+            "Travel more, spend less",
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+        ),
+
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'Genius\n XRESXSECCTTVYBIUU\n dtdt',
-                      style: TextStyle(color: Colors.white),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child:
+                // Obx(() =>
+                Row(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Get.to(GeniusLoyalityProgramPage());
+                      },
+                      child: Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(28.0),
+                          child: SizedBox(
+                            width: 200,
+                            child: Text(
+                              'Genius\n'
+                              // '${userNameController.emailName.value}'
+                              'you are at Genius Level1 in our loyality program\n dtdt',
+                              style: TextStyle(
+                                color: AppColors.white,
+                                fontSize: 17,
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        color: AppColors.secondary,
+                      ),
                     ),
-                  ),
-                  color: const Color.fromARGB(255, 2, 41, 237),
+                    SizedBox(width: 10),
+                    // Card(
+                    // child:
+                    InkWell(
+                      onTap: () {
+                        Get.to(GeniusLoyalityProgramPage());
+                      },
+                      child: Container(
+                        width: 200,
+                        height: 150,
+                        // margin: EdgeInsets.all(12),
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: AppColors.background,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: AppColors.secondary,
+                            width: 1,
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    '10% discount on stays\n',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 15.0),
+                                  child: Icon(
+                                    Icons.car_rental,
+                                    color: AppColors.blue,
+                                    size: 35,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Text(
+                              'Enjoy discount at participating properties worldwide',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    SizedBox(width: 10),
+                    // Card(
+                    // child:
+                    InkWell(
+                      onTap: () {
+                        Get.to(GeniusLoyalityProgramPage());
+                      },
+                      child: Container(
+                        width: 200,
+                        height: 150,
+                        // margin: EdgeInsets.all(12),
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: AppColors.background,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: AppColors.secondary,
+                            width: 1,
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    '10% discount on rental cars\n',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 15.0),
+                                  child: Icon(
+                                    Icons.car_rental,
+                                    color: AppColors.blue,
+                                    size: 35,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Text(
+                              'Enjoy discount at participating properties worldwide',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    // Card(
+                    // child:
+                    InkWell(
+                      onTap: () {
+                        Get.to(GeniusLoyalityProgramPage());
+                      },
+                      child: Container(
+                        width: 200,
+                        height: 150,
+                        // margin: EdgeInsets.all(12),
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: AppColors.background,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: AppColors.secondary,
+                            width: 1,
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    '10% discount on stays\n',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 15.0),
+                                  child: Icon(
+                                    Icons.car_rental,
+                                    color: AppColors.blue,
+                                    size: 35,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Text(
+                              'Enjoy discount at participating properties worldwide',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    // Card(
+                    // child:
+                    InkWell(
+                      onTap: () {
+                        Get.to(GeniusLoyalityProgramPage());
+                      },
+                      child: Container(
+                        width: 200,
+                        height: 150,
+                        // margin: EdgeInsets.all(12),
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: AppColors.background,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: AppColors.secondary,
+                            width: 1,
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    '10% discount on stays\n',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 15.0),
+                                  child: Icon(
+                                    Icons.car_rental,
+                                    color: AppColors.blue,
+                                    size: 35,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Text(
+                              'Enjoy discount at participating properties worldwide',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    // Card(
+                    // child:
+                    Container(
+                      width: 200,
+                      height: 150,
+                      // margin: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: AppColors.background,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: AppColors.secondary,
+                          width: 1,
+                        ),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  '10% discount on stays\n',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 15.0),
+                                child: Icon(
+                                  Icons.car_rental,
+                                  color: AppColors.blue,
+                                  size: 35,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Text(
+                            'Enjoy discount at participating properties worldwide',
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    // Card(child: Text('Genius\n XRESXSECCTTVYBIUU\n dtdt')),
+                    // Card(child: Text('Genius\n XRESXSECCTTVYBIUU\n dtdt')),
+                    // Card(child: Text('Genius\n XRESXSECCTTVYBIUU\n dtdt')),
+                  ],
                 ),
-              ),
-              Card(child: Text('Genius\n XRESXSECCTTVYBIUU\n dtdt')),
-              Card(child: Text('Genius\n XRESXSECCTTVYBIUU\n dtdt')),
-              Card(child: Text('Genius\n XRESXSECCTTVYBIUU\n dtdt')),
-            ],
           ),
         ),
       ],
